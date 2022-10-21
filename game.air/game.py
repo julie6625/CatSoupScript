@@ -4,6 +4,7 @@ __author__ = "lucas"
 from airtest.core.api import *
 
 
+
 auto_setup(__file__,devices=["Android://127.0.0.1:5037/13241FDD4000VH"])
 
 
@@ -23,9 +24,12 @@ def soup():
     customUsing("ads")
     from ads import ad
 
+    
 
-    if exists(Template(r"tpl1664877771710.png", record_pos=(0.173, -0.382), resolution=(1080, 2340))):
-        touch(Template(r"tpl1664877771710.png", record_pos=(0.173, -0.382), resolution=(1080, 2340)),times=15)
+
+
+#     if exists(Template(r"tpl1664877771710.png", record_pos=(0.173, -0.382), resolution=(1080, 2340))):
+#         touch(Template(r"tpl1664877771710.png", record_pos=(0.173, -0.382), resolution=(1080, 2340)),times=15)
 
     if exists(Template(r"tpl1664874826775.png", record_pos=(0.012, 0.908), resolution=(1080, 2340))):
         touch(Template(r"tpl1664874826775.png", record_pos=(0.012, 0.908), resolution=(1080, 2340)))
@@ -63,7 +67,11 @@ while(True):
         soup()
 
         print("第"+str(number)+"次已執行完畢")
-        if number%10==0 or number==1 :
+        if number == 1:
+            customUsing("treasure")
+            from treasure import treasure
+            treasure()
+        if number % 10 == 0 or number == 1 :
             touch([120,2032], duration = 30)
             touch([843, 2073])
             touch([802, 1872], duration = 30)
